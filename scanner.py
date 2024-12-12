@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 USER_AGENT = os.getenv('USER_AGENT')
+URL = os.getenv('URL')
 
 r = requests.Session()
 r.headers["User-Agent"] = USER_AGENT
@@ -81,5 +82,5 @@ def sql_injection_scan(url):
                 break
 
 if __name__ == "__main__":
-    urlToBeChecked = "https://www.yahoo.com"
+    urlToBeChecked = URL
     sql_injection_scan(urlToBeChecked)
